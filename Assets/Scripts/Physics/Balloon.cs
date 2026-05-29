@@ -3,9 +3,9 @@ using UnityEngine.InputSystem;
 
 public class Balloon : MonoBehaviour
 {
-    float buoyancyForce = 20f;
-    float buoyancyLoss = 0.01f;
-    float buoyancyGain = 0.03f;
+    [SerializeField] float buoyancyForce = 20f;
+    [SerializeField] float buoyancyLoss = 0.01f;
+    [SerializeField] float buoyancyGain = 0.03f;
     Rigidbody rb;
 
 
@@ -20,7 +20,7 @@ public class Balloon : MonoBehaviour
     {
         float netBuoyancyChange;
 
-        if (Keyboard.current.spaceKey.isPressed)
+        if (Keyboard.current.ctrlKey.isPressed)
         {
             netBuoyancyChange = buoyancyGain * Time.deltaTime;    
         }
